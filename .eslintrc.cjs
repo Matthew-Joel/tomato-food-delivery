@@ -17,5 +17,13 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/prop-types': 'off', // Disable prop-types validation
+    'no-unused-vars': 'warn',  // Warn instead of error for unused variables
+    'react/jsx-props-no-spreading': 'off', // Allow prop spreading
+    'react/react-in-jsx-scope': 'off', // Disable React in scope for React 17+
+    'no-console': 'warn', // Warn instead of error for console logs
+    'no-debugger': 'warn', // Warn instead of error for debugger statements
+    'react-hooks/exhaustive-deps': 'warn', // Warn instead of error for missing dependencies in hooks
   },
-}
+};
+
