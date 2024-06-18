@@ -1,10 +1,11 @@
 import { useState } from "react"
 import { assets } from "../../assets/assets"
 import "./Navbar.css"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 
 const Navbar = ({setShowLogin}) => {
     const [menu,setMenu] = useState("home")
+    
 
   return (
     <div className="navbar">
