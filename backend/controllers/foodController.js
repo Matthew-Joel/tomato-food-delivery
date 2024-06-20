@@ -26,6 +26,7 @@ const addFood = async (req,res) => {
 
 //all food list
 const listFood = async (req,res) => {
+    
     try{
         const foods = await foodModel.find({})
         res.json({success:true,data:foods})
