@@ -8,6 +8,14 @@ const Navbar = ({setShowLogin}) => {
     const [menu,setMenu] = useState("home");
 
     const {getTotalCartAmount,token,setToken} = useContext(StoreContext)
+    const logout = () => {
+      localStorage.removeItem("token")
+      setToken("");
+      navigate("/");
+
+    }
+
+    const navigate = useNavigate()
     
 
   return (
@@ -28,13 +36,13 @@ const Navbar = ({setShowLogin}) => {
                 <div className={getTotalCartAmount()===0?"":"dot"}></div>
             </div>
            {!token? <button onClick={()=>setShowLogin(true)}>sign in</button>
-          : <div className="navba-profile">
+          : <div className="navbar-profile">
 
             <img src={assets.profile_icon} alt="" />
             <ul className="nav-profile-dropdown">
               <li><img src={assets.bag_icon} alt="" /><p>Orders</p></li>
               <hr />
-              <li><img src={assets.logout_icon} alt="" />Logout</li>
+              <li onClick={logout}><img src={assets.logout_icon} alt="" />Logout</li>
             </ul>
           </div> 
           }
